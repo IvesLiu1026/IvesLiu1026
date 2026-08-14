@@ -24,7 +24,7 @@
   <text class="label" x="914" y="62" text-anchor="middle">LIVE</text>
   <g transform="translate(32 80)">
   <rect class="card" width="210" height="92" rx="12"/>
-  <text class="metric" x="18" y="48">96</text>
+  <text class="metric" x="18" y="48">97</text>
   <text class="label" x="18" y="72">2026 CONTRIBUTIONS</text>
 </g><g transform="translate(262 80)">
   <rect class="card" width="210" height="92" rx="12"/>
