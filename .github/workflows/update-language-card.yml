@@ -1,0 +1,46 @@
+name: Update language card
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "17 2 * * 0"
+  push:
+    branches:
+      - main
+    paths:
+      - .github/workflows/update-language-card.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: profile-language-card
+  cancel-in-progress: true
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out profile repository
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+
+      - name: Generate top-languages card
+        uses: stats-organization/github-readme-stats-action@e856fc8de9d7729b463c468911e232cfbdc3d55e # v2
+        with:
+          card: top-langs
+          options: username=${{ github.repository_owner }}&layout=donut&langs_count=8&hide=Roff&hide_border=true&theme=transparent&size_weight=0.5&count_weight=0.5
+          path: profile/top-langs.svg
+          token: ${{ secrets.GITHUB_TOKEN }}
+          fail_on_error: true
+
+      - name: Publish card when data changes
+        run: |
+          if git diff --quiet -- profile/top-langs.svg; then
+            echo "Language card is already current."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- profile/top-langs.svg
+          git commit -m "chore: refresh language card"
+          git push

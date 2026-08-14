@@ -1,39 +1,38 @@
-# Ives Liu
+<h1 align="center">Hi, I'm Ives Liu</h1>
 
-Electrical and Computer Engineering student at National Yang Ming Chiao Tung University (NYCU) in Taiwan.
+<p align="center">
+  Electrical and Computer Engineering student at NYCU · Taiwan
+</p>
 
-I build end-to-end systems across digital hardware, embedded software, applied AI, and full-stack product engineering. I care about rigorous validation, reproducible tooling, and turning complex technology into software that people can actually use.
+My current research focuses on **controllable visual generation**, **multimodal experimentation**, and **3D world and environment generation**. I work primarily on **VISTA** and **SimWorld**, building the research systems needed to turn those ideas into reproducible experiments. My background is in natural language processing; embedded systems, FPGA/RTL development, and low-level firmware are long-term engineering interests.
 
-## Engineering dashboard
+## Current work
 
-![Ives Liu's GitHub engineering dashboard](./assets/profile-dashboard.svg)
+- **VISTA — Video Instruction Synthesis for Training AI** — A research system for controllable visual generation and multimodal experimentation, including data, review, and evaluation workflows.
+- **[SimWorld Studio](https://github.com/IvesLiu1026/SimWorld-Studio)** — A platform for generating and experimenting with 3D environments for embodied-agent research.
 
-## Current focus
+## Selected projects
 
-- FPGA and RTL development, simulation, synthesis, and cross-platform hardware toolchains
-- Embedded systems and hardware–software integration with Rust and C
-- Applied AI research platforms, evaluation pipelines, and educational tools
-- Full-stack products, real-time applications, developer tooling, and deployment automation
-
-## Selected open-source work
-
-- **[TSIC FPGA Devkit](https://github.com/IvesLiu1026/tsic-fpga-devkit)** — A one-click, cross-platform development environment for TSIC Verilog labs and Tang Nano FPGA projects. It provides pinned toolchains, checksum verification, VS Code tasks, bilingual documentation, and CI validation for macOS and Windows.
-- **[Adaptive Reasoning Prompting](https://github.com/IvesLiu1026/lrm-prompting-experiments)** — An experimental pipeline for studying how dynamic reasoning prompts affect large language models on MMLU, including parallel inference, result aggregation, and quantitative analysis.
+- **[Adaptive Reasoning Prompting](https://github.com/IvesLiu1026/lrm-prompting-experiments)** — Experiments on dynamic reasoning prompts and large-language-model evaluation using MMLU.
 - **[Question Generation from Video Transcripts](https://github.com/IvesLiu1026/QGProject)** — A local-LLM workflow for generating multiple-choice questions from educational video transcripts.
+- **[TSIC FPGA Devkit](https://github.com/IvesLiu1026/tsic-fpga-devkit)** — A cross-platform Verilog and FPGA development environment for macOS and Windows.
 
-## Beyond open source
+## Background and technical interests
 
-My other work includes a bare-metal Rust mini operating system for STM32F4 hardware, an AI-assisted video instruction and review platform, a real-time Rust and Flutter social game, and a full-stack course-authoring platform. These projects span firmware, interactive graphics, backend architecture, authentication, real-time communication, CI, and deployment.
+- **Research focus:** controllable generation, multimodal systems, 3D environment generation, research tooling
+- **NLP background:** Python, language-model evaluation, prompting experiments, data pipelines
+- **Engineering interests:** Rust, C, Verilog, embedded systems, FPGA/RTL, firmware, hardware–software integration
+- **Software engineering:** TypeScript, React, FastAPI, Docker, GitHub Actions, reproducible development environments
 
-## Technical toolkit
+## Most-used languages
 
-- **Hardware:** Verilog, FPGA simulation and synthesis, Gowin EDA, Icarus Verilog, Yosys, OSS CAD Suite
-- **Systems:** Rust, C, embedded firmware, hardware–software integration
-- **Applications:** Python, TypeScript, Dart, React, Next.js, Flutter
-- **Backend and infrastructure:** FastAPI, Axum, PostgreSQL, WebSocket, Docker, Cloudflare
-- **Engineering:** Git, GitHub Actions, automated testing, reproducible environments, deployment automation, technical writing
+<p align="center">
+  <img src="./profile/top-langs.svg" width="420" alt="Ives Liu's most-used languages across public GitHub repositories" />
+</p>
+
+<p align="center"><sub>Language statistics are calculated from public repositories and do not represent experience level.</sub></p>
 
 ## Connect
 
 - [LinkedIn](https://www.linkedin.com/in/liu-ives-92612a245/)
-- [GitHub projects](https://github.com/IvesLiu1026?tab=repositories)
+- [GitHub repositories](https://github.com/IvesLiu1026?tab=repositories)
