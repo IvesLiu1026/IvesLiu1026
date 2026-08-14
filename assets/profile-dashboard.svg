@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="980" height="318" viewBox="0 0 980 318" role="img" aria-labelledby="title desc">
+  <title id="title">IvesLiu1026 engineering dashboard</title>
+  <desc id="desc">GitHub contribution, streak, project, star, and language summary.</desc>
+  <style>
+    .background { fill: #ffffff; stroke: #d0d7de; }
+    .card { fill: #f6f8fa; stroke: #d8dee4; }
+    .heading, .metric { fill: #1f2328; }
+    .label, .legend, .note { fill: #636c76; }
+    .heading { font: 700 17px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; letter-spacing: .08em; }
+    .metric { font: 700 30px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+    .label { font: 600 11px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; letter-spacing: .06em; }
+    .legend { font: 500 13px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+    .note { font: 400 11px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+    @media (prefers-color-scheme: dark) {
+      .background { fill: #0d1117; stroke: #30363d; }
+      .card { fill: #161b22; stroke: #30363d; }
+      .heading, .metric { fill: #f0f6fc; }
+      .label, .legend, .note { fill: #8b949e; }
+    }
+  </style>
+  <rect class="background" x="1" y="1" width="978" height="316" rx="16"/>
+  <text class="heading" x="32" y="48">ENGINEERING DASHBOARD</text>
+  <circle cx="930" cy="43" r="5" fill="#3fb950"/>
+  <text class="label" x="914" y="62" text-anchor="middle">LIVE</text>
+  <g transform="translate(32 80)">
+  <rect class="card" width="210" height="92" rx="12"/>
+  <text class="metric" x="18" y="48">96</text>
+  <text class="label" x="18" y="72">2026 CONTRIBUTIONS</text>
+</g><g transform="translate(262 80)">
+  <rect class="card" width="210" height="92" rx="12"/>
+  <text class="metric" x="18" y="48">1 day</text>
+  <text class="label" x="18" y="72">CURRENT STREAK</text>
+</g><g transform="translate(492 80)">
+  <rect class="card" width="210" height="92" rx="12"/>
+  <text class="metric" x="18" y="48">26</text>
+  <text class="label" x="18" y="72">PUBLIC PROJECTS</text>
+</g><g transform="translate(722 80)">
+  <rect class="card" width="210" height="92" rx="12"/>
+  <text class="metric" x="18" y="48">6</text>
+  <text class="label" x="18" y="72">PUBLIC LANGUAGES</text>
+</g>
+  <text class="label" x="32" y="202">TOP LANGUAGES ACROSS PUBLIC PROJECTS</text>
+  <clipPath id="language-bar"><rect x="32" y="216" width="916" height="10" rx="5"/></clipPath>
+  <g clip-path="url(#language-bar)"><rect x="32.0" y="216" width="626.7" height="10" fill="#3572A5"/><rect x="658.7" y="216" width="144.6" height="10" fill="#e34c26"/><rect x="803.4" y="216" width="48.2" height="10" fill="#555555"/><rect x="851.6" y="216" width="48.2" height="10" fill="#000080"/><rect x="899.8" y="216" width="48.2" height="10" fill="#ecdebe"/></g>
+  <circle cx="37" cy="258" r="5" fill="#3572A5"/><text class="legend" x="49" y="263">Python · 13</text><circle cx="217" cy="258" r="5" fill="#e34c26"/><text class="legend" x="229" y="263">HTML · 3</text><circle cx="397" cy="258" r="5" fill="#555555"/><text class="legend" x="409" y="263">C · 1</text><circle cx="577" cy="258" r="5" fill="#000080"/><text class="legend" x="589" y="263">Lua · 1</text><circle cx="757" cy="258" r="5" fill="#ecdebe"/><text class="legend" x="769" y="263">Roff · 1</text>
+  <text class="note" x="32" y="296">Contribution totals include anonymized private activity; project and language totals use public, non-fork repositories only.</text>
+</svg>
