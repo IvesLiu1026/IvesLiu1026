@@ -8,15 +8,21 @@ My current research focuses on **controllable visual generation**, **multimodal 
 
 ## Current work
 
-- **VISTA — Video Instruction Synthesis for Training AI** — A research system for controllable visual generation and multimodal experimentation, including data, review, and evaluation workflows.
+- **[VISTA — Video Instruction Synthesis for Training AI](https://github.com/IvesLiu1026/VISTA)** — A research system for controllable visual generation and multimodal experimentation, including synthesis, review, and evaluation workflows.
 - **[SimWorld Studio](https://github.com/IvesLiu1026/SimWorld-Studio)** — A platform for generating and experimenting with 3D environments for embodied-agent research.
 
-## Selected projects
+## Selected engineering projects
+
+- **[The Bit and Bond](https://github.com/IvesLiu1026/the-bit-and-bond)** — A Flutter/Flame and Rust social RPG experiment with real-time multiplayer systems.
+- **[Rust MiniOS](https://github.com/IvesLiu1026/FinalProject_RustMiniOS)** — Bare-metal STM32F407 firmware with a touch-first shell, applications, games, diagnostics, and host-side verification.
+- **[TSIC FPGA Projects](https://github.com/IvesLiu1026/tsic-fpga-projects)** — A curated collection of Tang Nano 4K games, RTL experiments, simulators, asset pipelines, and verification records.
+- **[TSIC FPGA Devkit](https://github.com/IvesLiu1026/tsic-fpga-devkit)** — A cross-platform Verilog and FPGA development environment for macOS and Windows.
+- **[Teaching Atlas](https://github.com/IvesLiu1026/teaching-atlas)** — A Django and Next.js teaching workspace published with synthetic curriculum data.
+
+## Earlier NLP work
 
 - **[Adaptive Reasoning Prompting](https://github.com/IvesLiu1026/lrm-prompting-experiments)** — Experiments on dynamic reasoning prompts and large-language-model evaluation using MMLU.
 - **[Question Generation from Video Transcripts](https://github.com/IvesLiu1026/QGProject)** — A local-LLM workflow for generating multiple-choice questions from educational video transcripts.
-- **[TSIC FPGA Projects](https://github.com/IvesLiu1026/tsic-fpga-projects)** — A curated collection of Tang Nano 4K games, RTL experiments, simulators, asset pipelines, and verification records.
-- **[TSIC FPGA Devkit](https://github.com/IvesLiu1026/tsic-fpga-devkit)** — A cross-platform Verilog and FPGA development environment for macOS and Windows.
 
 ## Background and technical interests
 
