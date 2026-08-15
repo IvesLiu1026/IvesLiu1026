@@ -15,6 +15,7 @@ My current research focuses on **controllable visual generation**, **multimodal 
 
 - **[Adaptive Reasoning Prompting](https://github.com/IvesLiu1026/lrm-prompting-experiments)** — Experiments on dynamic reasoning prompts and large-language-model evaluation using MMLU.
 - **[Question Generation from Video Transcripts](https://github.com/IvesLiu1026/QGProject)** — A local-LLM workflow for generating multiple-choice questions from educational video transcripts.
+- **[TSIC FPGA Projects](https://github.com/IvesLiu1026/tsic-fpga-projects)** — A curated collection of Tang Nano 4K games, RTL experiments, simulators, asset pipelines, and verification records.
 - **[TSIC FPGA Devkit](https://github.com/IvesLiu1026/tsic-fpga-devkit)** — A cross-platform Verilog and FPGA development environment for macOS and Windows.
 
 ## Background and technical interests

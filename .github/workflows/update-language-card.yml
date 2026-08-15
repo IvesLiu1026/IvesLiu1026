@@ -35,7 +35,7 @@ jobs:
 
       - name: Publish card when data changes
         run: |
-          if git diff --quiet -- profile/top-langs.svg; then
+          if [ -z "$(git status --porcelain -- profile/top-langs.svg)" ]; then
             echo "Language card is already current."
             exit 0
           fi
