@@ -1,43 +1,38 @@
 <h1 align="center">Hi, I'm Ives Liu</h1>
 
 <p align="center">
-  Electrical and Computer Engineering student at NYCU · Taiwan
+  Electrical and Computer Engineering student at NYCU · NLP Lab
 </p>
 
-My current research focuses on **controllable visual generation**, **multimodal experimentation**, and **3D world and environment generation**. I work primarily on **VISTA** and **SimWorld**, building the research systems needed to turn those ideas into reproducible experiments. My background is in natural language processing; embedded systems, FPGA/RTL development, and low-level firmware are long-term engineering interests.
+I work on **controllable visual generation**, **multimodal experimentation**, and **3D world generation**. My current research centers on **VISTA** and **VISTA World**: an effort to bring the environment-generation ideas explored through SimWorld into a controllable, multimodal world-generation workflow within VISTA.
 
-## Current work
+## Research
 
-- **[VISTA — Video Instruction Synthesis for Training AI](https://github.com/IvesLiu1026/VISTA)** — A research system for controllable visual generation and multimodal experimentation, including synthesis, review, and evaluation workflows.
-- **[SimWorld Studio](https://github.com/IvesLiu1026/SimWorld-Studio)** — A platform for generating and experimenting with 3D environments for embodied-agent research.
+- **[VISTA — Video Instruction Synthesis for Training AI](https://github.com/IvesLiu1026/VISTA)** — My primary research system for controllable visual generation and multimodal experiments, with reproducible synthesis, review, and evaluation workflows.
+- **VISTA World** — An ongoing research direction that integrates controllable 3D environment generation with VISTA, informed by the environment-generation ideas explored in **[SimWorld Studio](https://github.com/IvesLiu1026/SimWorld-Studio)**.
 
-## Selected engineering projects
+## Research snapshot
 
-- **[The Bit and Bond](https://github.com/IvesLiu1026/the-bit-and-bond)** — A Flutter/Flame and Rust social RPG experiment with real-time multiplayer systems.
-- **[Rust MiniOS](https://github.com/IvesLiu1026/FinalProject_RustMiniOS)** — Bare-metal STM32F407 firmware with a touch-first shell, applications, games, diagnostics, and host-side verification.
-- **[TSIC FPGA Projects](https://github.com/IvesLiu1026/tsic-fpga-projects)** — A curated collection of Tang Nano 4K games, RTL experiments, simulators, asset pipelines, and verification records.
-- **[TSIC FPGA Devkit](https://github.com/IvesLiu1026/tsic-fpga-devkit)** — A cross-platform Verilog and FPGA development environment for macOS and Windows.
-- **[Teaching Atlas](https://github.com/IvesLiu1026/teaching-atlas)** — A Django and Next.js teaching workspace published with synthetic curriculum data.
+| | |
+|---|---|
+| **Current systems** | VISTA · VISTA World |
+| **Research focus** | Controllable generation · Multimodal systems · 3D world generation |
+| **NLP background** | Language models · Evaluation · Prompting · Data pipelines |
+| **Research engineering** | Experiment tooling · Reproducible workflows · Interactive interfaces |
 
-## Earlier NLP work
+[![VISTA validation](https://github.com/IvesLiu1026/VISTA/actions/workflows/validate.yml/badge.svg)](https://github.com/IvesLiu1026/VISTA/actions/workflows/validate.yml)
 
-- **[Adaptive Reasoning Prompting](https://github.com/IvesLiu1026/lrm-prompting-experiments)** — Experiments on dynamic reasoning prompts and large-language-model evaluation using MMLU.
-- **[Question Generation from Video Transcripts](https://github.com/IvesLiu1026/QGProject)** — A local-LLM workflow for generating multiple-choice questions from educational video transcripts.
+Earlier NLP experiments include **[adaptive reasoning prompting](https://github.com/IvesLiu1026/lrm-prompting-experiments)** and **[question generation from video transcripts](https://github.com/IvesLiu1026/QGProject)**.
 
-## Background and technical interests
+Outside my primary research, I maintain a broader technical interest in embedded systems, FPGA/RTL development, hardware–software integration, and low-level firmware.
 
-- **Research focus:** controllable generation, multimodal systems, 3D environment generation, research tooling
-- **NLP background:** Python, language-model evaluation, prompting experiments, data pipelines
-- **Engineering interests:** Rust, C, Verilog, embedded systems, FPGA/RTL, firmware, hardware–software integration
-- **Software engineering:** TypeScript, React, FastAPI, Docker, GitHub Actions, reproducible development environments
-
-## Most-used languages
+## Public-code language distribution
 
 <p align="center">
   <img src="./profile/top-langs.svg" width="420" alt="Ives Liu's most-used languages across public GitHub repositories" />
 </p>
 
-<p align="center"><sub>Language statistics are calculated from public repositories and do not represent experience level.</sub></p>
+<p align="center"><sub>Calculated from public repositories; this is a code-distribution view, not a measure of proficiency or research impact.</sub></p>
 
 ## Connect
 
