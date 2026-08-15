@@ -36,5 +36,4 @@ Outside my primary research, I maintain a broader technical interest in embedded
 
 ## Connect
 
-- [LinkedIn](https://www.linkedin.com/in/liu-ives-92612a245/)
 - [GitHub repositories](https://github.com/IvesLiu1026?tab=repositories)
