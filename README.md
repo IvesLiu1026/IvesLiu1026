@@ -1,10 +1,10 @@
 <h1 align="center">Hi, I'm Ives Liu</h1>
 
 <p align="center">
-  Electrical and Computer Engineering student at NYCU · NLP Lab
+  NYCU · NLP Lab
 </p>
 
-I work on **controllable visual generation**, **multimodal experimentation**, and **3D world generation**. My current research centers on **VISTA** and **VISTA World**: an effort to bring the environment-generation ideas explored through SimWorld into a controllable, multimodal world-generation workflow within VISTA.
+With an academic background in Electrical and Computer Engineering at NYCU, I joined the NYCU NLP Lab in 2024. I began by working on question answering and broader NLP tasks, and my research has since evolved toward controllable visual generation, multimodal systems, and 3D world generation. My current work centers on VISTA and VISTA World.
 
 ## Research
 
