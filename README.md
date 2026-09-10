@@ -26,6 +26,12 @@ Earlier NLP experiments include **[adaptive reasoning prompting](https://github.
 
 Outside my primary research, I maintain a broader technical interest in embedded systems, FPGA/RTL development, hardware–software integration, and low-level firmware.
 
+## GitHub activity
+
+<p align="center">
+  <img src="./profile/activity.svg" width="760" alt="Ives Liu's rolling 365-day GitHub activity snapshot" />
+</p>
+
 ## Public-code language distribution
 
 <p align="center">
@@ -33,6 +39,12 @@ Outside my primary research, I maintain a broader technical interest in embedded
 </p>
 
 <p align="center"><sub>Calculated from public repositories; this is a code-distribution view, not a measure of proficiency or research impact.</sub></p>
+
+## Contribution landscape
+
+<p align="center">
+  <img src="./profile-3d-contrib/profile-green-animate.svg" width="100%" alt="Ives Liu's three-dimensional GitHub contribution landscape" />
+</p>
 
 ## Connect
 

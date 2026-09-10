@@ -1,0 +1,50 @@
+name: Update profile visuals
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "42 18 * * *"
+  push:
+    branches:
+      - main
+    paths:
+      - .github/workflows/update-profile-visuals.yml
+      - scripts/render_activity.py
+
+permissions:
+  contents: write
+
+concurrency:
+  group: profile-visuals
+  cancel-in-progress: true
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out profile repository
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+
+      - name: Render privacy-safe activity dashboard
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_REPOSITORY_OWNER: ${{ github.repository_owner }}
+        run: python3 scripts/render_activity.py profile/activity.svg
+
+      - name: Render 3D contribution landscape
+        uses: yoshi389111/github-profile-3d-contrib@7d95e7d4cdc028dd1e1cbd957d65f35efb12ae39 # v0.9.3
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          USERNAME: ${{ github.repository_owner }}
+
+      - name: Publish visuals when data changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- profile/activity.svg profile-3d-contrib/profile-green-animate.svg
+          if git diff --cached --quiet; then
+            echo "Profile visuals are already current."
+            exit 0
+          fi
+          git commit -m "chore: refresh profile visuals"
+          git push
