@@ -9,7 +9,7 @@ With an academic background in Electrical and Computer Engineering at NYCU, I jo
 ## Research
 
 - **[VISTA — Video Instruction Synthesis for Training AI](https://github.com/IvesLiu1026/VISTA)** — My primary research system for controllable visual generation and multimodal experiments, with reproducible synthesis, review, and evaluation workflows.
-- **VISTA World** — An ongoing research direction that integrates controllable 3D environment generation with VISTA, informed by the environment-generation ideas explored in **[SimWorld Studio](https://github.com/IvesLiu1026/SimWorld-Studio)**.
+- **[VISTA World](https://github.com/IvesLiu1026/VISTA-World)** — An ongoing research direction that integrates controllable 3D environment generation with VISTA, informed by the environment-generation ideas explored in **[SimWorld Studio](https://github.com/IvesLiu1026/SimWorld-Studio)**.
 
 ## Research snapshot
 
