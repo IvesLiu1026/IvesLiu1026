@@ -1,24 +1,37 @@
 <h1 align="center">Hi, I'm Ives Liu</h1>
 
 <p align="center">
-  NYCU NLP Lab · Controllable visual generation · Multimodal systems · 3D world generation
+  NYCU · NLP Lab
 </p>
 
-I have an Electrical and Computer Engineering background and have worked with the NYCU NLP Lab since 2024. My current research centers on VISTA and VISTA World.
+With an academic background in Electrical and Computer Engineering at NYCU, I joined the NYCU NLP Lab in 2024. I began by working on question answering and broader NLP tasks, and my research has since evolved toward controllable visual generation, multimodal systems, and 3D world generation. My current work centers on VISTA and VISTA World.
 
 ## Research
 
-- **[VISTA — Video Instruction Synthesis for Training AI](https://github.com/IvesLiu1026/VISTA)** — Controllable visual generation, multimodal experiments, and reproducible evaluation.
-- **[VISTA World](https://github.com/IvesLiu1026/VISTA-World)** — Controllable 3D environment generation, informed by **[SimWorld Studio](https://github.com/IvesLiu1026/SimWorld-Studio)**.
+- **[VISTA — Video Instruction Synthesis for Training AI](https://github.com/IvesLiu1026/VISTA)** — My primary research system for controllable visual generation and multimodal experiments, with reproducible synthesis, review, and evaluation workflows.
+- **[VISTA World](https://github.com/IvesLiu1026/VISTA-World)** — An ongoing research direction that integrates controllable 3D environment generation with VISTA, informed by the environment-generation ideas explored in **[SimWorld Studio](https://github.com/IvesLiu1026/SimWorld-Studio)**.
+
+## Research snapshot
+
+| | |
+|---|---|
+| **Current systems** | VISTA · VISTA World |
+| **Research focus** | Controllable generation · Multimodal systems · 3D world generation |
+| **NLP background** | Language models · Evaluation · Prompting · Data pipelines |
+| **Research engineering** | Experiment tooling · Reproducible workflows · Interactive interfaces |
 
 [![VISTA validation](https://github.com/IvesLiu1026/VISTA/actions/workflows/validate.yml/badge.svg)](https://github.com/IvesLiu1026/VISTA/actions/workflows/validate.yml)
 
-Earlier work: **[adaptive reasoning prompting](https://github.com/IvesLiu1026/lrm-prompting-experiments)** · **[video-transcript question generation](https://github.com/IvesLiu1026/QGProject)** · embedded systems · FPGA/RTL.
+Earlier NLP experiments include **[adaptive reasoning prompting](https://github.com/IvesLiu1026/lrm-prompting-experiments)** and **[question generation from video transcripts](https://github.com/IvesLiu1026/QGProject)**.
 
-## At a glance
+Outside my primary research, I maintain a broader technical interest in embedded systems, FPGA/RTL development, hardware–software integration, and low-level firmware.
+
+## Contribution landscape
 
 <p align="center">
-  <img src="./profile/overview.svg" width="640" alt="Ives Liu's compact GitHub activity and public-code language overview" />
+  <img src="./profile-3d-contrib/profile-green-animate.svg" width="640" alt="Ives Liu's three-dimensional GitHub contribution landscape" />
 </p>
 
-<p align="center"><sub>Public-code distribution describes repository contents, not proficiency.</sub></p>
+## Connect
+
+- [GitHub repositories](https://github.com/IvesLiu1026?tab=repositories)

@@ -9,7 +9,6 @@ on:
       - main
     paths:
       - .github/workflows/update-profile-visuals.yml
-      - scripts/render_activity.py
 
 permissions:
   contents: read
@@ -27,17 +26,17 @@ jobs:
       - name: Check out profile repository
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
 
-      - name: Render privacy-safe activity dashboard
+      - name: Render 3D contribution landscape
+        uses: yoshi389111/github-profile-3d-contrib@7d95e7d4cdc028dd1e1cbd957d65f35efb12ae39 # v0.9.3
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          GITHUB_REPOSITORY_OWNER: ${{ github.repository_owner }}
-        run: python3 scripts/render_activity.py profile/overview.svg
+          USERNAME: ${{ github.repository_owner }}
 
       - name: Seal generated assets
         uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
         with:
-          name: profile-overview
-          path: profile/overview.svg
+          name: profile-3d
+          path: profile-3d-contrib/profile-green-animate.svg
           if-no-files-found: error
           retention-days: 1
 
@@ -53,14 +52,14 @@ jobs:
       - name: Restore sealed assets
         uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c # v8.0.1
         with:
-          name: profile-overview
-          path: .
+          name: profile-3d
+          path: profile-3d-contrib
 
       - name: Publish visuals when data changes
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add -- profile/overview.svg
+          git add -- profile-3d-contrib/profile-green-animate.svg
           if git diff --cached --quiet; then
             echo "Profile visuals are already current."
             exit 0
