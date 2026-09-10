@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Render a privacy-safe rolling GitHub activity card as a static SVG."""
+"""Render a compact, privacy-safe GitHub profile overview as static SVG."""
 
 from __future__ import annotations
 
@@ -56,18 +56,6 @@ def streaks(counts: list[int]) -> tuple[int, int]:
     return current, longest
 
 
-def weekly_totals(days: list[dict], first_day: dt.date) -> list[int]:
-    totals = [0] * 53
-    for item in days:
-        day = dt.date.fromisoformat(item["date"])
-        offset = (day - first_day).days
-        if 0 <= offset < 365:
-            totals[min(offset // 7, 52)] += item["contributionCount"]
-    while len(totals) > 52:
-        totals.pop(0)
-    return totals
-
-
 def render_svg(
     *,
     username: str,
@@ -76,67 +64,77 @@ def render_svg(
     current_streak: int,
     longest_streak: int,
     public_repos: int,
-    languages: int,
-    weeks: list[int],
+    language_count: int,
+    language_mix: list[tuple[str, str, float]],
 ) -> str:
-    maximum = max(weeks, default=1) or 1
-    bars = []
-    for index, value in enumerate(weeks):
-        height = 3 if value == 0 else 4 + round(24 * value / maximum)
-        opacity = 0.20 if value == 0 else 0.45 + 0.55 * value / maximum
-        bars.append(
-            f'<rect x="{68 + index * 12}" y="{218 - height}" width="8" '
-            f'height="{height}" rx="2" class="pulse" opacity="{opacity:.2f}" />'
-        )
-
     metrics = [
         (f"{total:,}", "contributions"),
         (str(active_days), "active days"),
-        (str(current_streak), "current streak"),
-        (str(longest_streak), "longest streak"),
+        (f"{current_streak} days", "current streak"),
+        (str(public_repos), "public repos"),
     ]
-    tiles = []
+    metric_nodes = []
     for index, (value, label) in enumerate(metrics):
-        x = 28 + index * 181
-        tiles.append(
-            f'<g transform="translate({x},78)">'
-            '<rect width="165" height="82" rx="12" class="tile" />'
-            f'<text x="16" y="38" class="value">{html.escape(value)}</text>'
-            f'<text x="16" y="62" class="label">{html.escape(label)}</text>'
+        x = 28 + index * 177
+        metric_nodes.append(
+            f'<g transform="translate({x},63)">'
+            f'<text x="0" y="24" class="value">{html.escape(value)}</text>'
+            f'<text x="0" y="45" class="label">{html.escape(label)}</text>'
             '</g>'
+        )
+
+    bar_nodes = []
+    cursor = 28.0
+    for _, color, percentage in language_mix:
+        width = 664 * percentage / 100
+        bar_nodes.append(
+            f'<rect x="{cursor:.2f}" y="137" width="{width:.2f}" height="10" fill="{color}" />'
+        )
+        cursor += width
+
+    legend_nodes = []
+    for index, (name, color, percentage) in enumerate(language_mix):
+        x = 28 + (index % 3) * 224
+        y = 173 + (index // 3) * 21
+        legend_nodes.append(
+            f'<circle cx="{x + 4}" cy="{y - 4}" r="4" fill="{color}" />'
+            f'<text x="{x + 15}" y="{y}" class="legend">'
+            f'{html.escape(name)} {percentage:.1f}%</text>'
         )
 
     description = (
         f"{username}: {total} contributions over the rolling year, {active_days} active days, "
-        f"a {current_streak}-day current streak, and a {longest_streak}-day longest streak."
+        f"a {current_streak}-day current streak, {public_repos} public repositories, and "
+        f"{language_count} public-code languages."
     )
-    return f'''<svg xmlns="http://www.w3.org/2000/svg" width="760" height="258" viewBox="0 0 760 258" role="img" aria-labelledby="title desc">
-  <title id="title">{html.escape(username)} GitHub activity snapshot</title>
+    return f'''<svg xmlns="http://www.w3.org/2000/svg" width="720" height="212" viewBox="0 0 720 212" role="img" aria-labelledby="title desc">
+  <title id="title">{html.escape(username)} GitHub overview</title>
   <desc id="desc">{html.escape(description)}</desc>
   <style>
     .card {{ fill: #f6f8fa; stroke: #d0d7de; }}
-    .tile {{ fill: #ffffff; stroke: #d8dee4; }}
-    .heading {{ fill: #1f2328; font: 600 20px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }}
-    .subtle {{ fill: #656d76; font: 400 12px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }}
-    .value {{ fill: #1f883d; font: 700 27px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }}
-    .label {{ fill: #656d76; font: 500 12px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; text-transform: uppercase; letter-spacing: .7px; }}
-    .pulse {{ fill: #2da44e; }}
+    .heading {{ fill: #1f2328; font: 600 18px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }}
+    .subtle {{ fill: #656d76; font: 400 11px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }}
+    .value {{ fill: #1f883d; font: 700 22px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }}
+    .label {{ fill: #656d76; font: 500 10px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; text-transform: uppercase; letter-spacing: .6px; }}
+    .legend {{ fill: #656d76; font: 500 11px -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }}
+    .divider {{ stroke: #d8dee4; }}
     @media (prefers-color-scheme: dark) {{
       .card {{ fill: #0d1117; stroke: #30363d; }}
-      .tile {{ fill: #161b22; stroke: #30363d; }}
       .heading {{ fill: #f0f6fc; }}
-      .subtle, .label {{ fill: #8b949e; }}
+      .subtle, .label, .legend {{ fill: #8b949e; }}
       .value {{ fill: #3fb950; }}
-      .pulse {{ fill: #3fb950; }}
+      .divider {{ stroke: #30363d; }}
     }}
   </style>
-  <rect x="1" y="1" width="758" height="256" rx="16" class="card" />
-  <text x="28" y="37" class="heading">365-day activity snapshot</text>
-  <text x="28" y="57" class="subtle">Public profile activity · rolling daily window · generated on GitHub Actions</text>
-  {''.join(tiles)}
-  <text x="28" y="190" class="subtle">ACTIVITY PULSE</text>
-  {''.join(bars)}
-  <text x="732" y="238" text-anchor="end" class="subtle">{public_repos} public repos · {languages} primary languages</text>
+  <rect x="1" y="1" width="718" height="210" rx="14" class="card" />
+  <text x="28" y="31" class="heading">GitHub at a glance</text>
+  <text x="692" y="31" text-anchor="end" class="subtle">rolling 365 days · public-code mix</text>
+  {''.join(metric_nodes)}
+  <path d="M189 62v46 M366 62v46 M543 62v46" class="divider" />
+  <text x="28" y="128" class="label">LANGUAGE DISTRIBUTION · {language_count} LANGUAGES · LONGEST STREAK {longest_streak} DAYS</text>
+  <clipPath id="bar"><rect x="28" y="137" width="664" height="10" rx="5" /></clipPath>
+  <g clip-path="url(#bar)">{''.join(bar_nodes)}</g>
+  {''.join(legend_nodes)}
 </svg>
 '''
 
@@ -169,7 +167,13 @@ def main() -> int:
             ownerAffiliations: OWNER
             orderBy: {field: UPDATED_AT, direction: DESC}
           ) {
-            nodes { name isArchived primaryLanguage { name } }
+            nodes {
+              name
+              isArchived
+              languages(first: 100, orderBy: {field: SIZE, direction: DESC}) {
+                edges { size node { name color } }
+              }
+            }
           }
         }
       }
@@ -196,11 +200,28 @@ def main() -> int:
         repo for repo in data["repositories"]["nodes"]
         if not repo["isArchived"] and repo["name"] != username
     ]
-    language_names = {
-        repo["primaryLanguage"]["name"]
-        for repo in repositories
-        if repo.get("primaryLanguage")
-    }
+    language_sizes: dict[str, int] = {}
+    language_colors: dict[str, str] = {}
+    for repository in repositories:
+        for edge in repository["languages"]["edges"]:
+            name = edge["node"]["name"]
+            if name == "Roff":
+                continue
+            language_sizes[name] = language_sizes.get(name, 0) + edge["size"]
+            color = edge["node"].get("color") or "#8c959f"
+            language_colors.setdefault(name, color)
+
+    total_bytes = sum(language_sizes.values()) or 1
+    ordered = sorted(language_sizes.items(), key=lambda item: item[1], reverse=True)
+    top = ordered[:5]
+    other_size = sum(size for _, size in ordered[5:])
+    if other_size:
+        top.append(("Other", other_size))
+        language_colors["Other"] = "#8c959f"
+    language_mix = [
+        (name, language_colors[name], size * 100 / total_bytes)
+        for name, size in top
+    ]
     svg = render_svg(
         username=username,
         total=calendar["totalContributions"],
@@ -208,8 +229,8 @@ def main() -> int:
         current_streak=current,
         longest_streak=longest,
         public_repos=len(repositories),
-        languages=len(language_names),
-        weeks=weekly_totals(days, first_day),
+        language_count=len(language_sizes),
+        language_mix=language_mix,
     )
     output = Path(sys.argv[1])
     output.parent.mkdir(parents=True, exist_ok=True)
